@@ -23,7 +23,8 @@ Hoeffding霍夫丁不等式
 # 1.伯努利随机变量的特例
 我们假定一个硬币A面朝上的概率为$p$，则B面朝上的概率为$1-p$。抛n次硬币，A面朝上次数的期望值为$n*p$。则A面朝上的次数不超过k次的概率为：
 \begin{equation}
-P(H(n)\leq k)=\sum_{i=0}^kC_n^ip^i(1-p)^{n-i}\\=\sum_{i=0}^k\frac{n!}{i!(n-i)!}p^i(1-p)^{n-i}
+P(H(n)\leq k)=\sum_{i=0}^kC_n^ip^i(1-p)^{n-i}\\
+=\sum_{i=0}^k\frac{n!}{i!(n-i)!}p^i(1-p)^{n-i}
 \end{equation}
 其中$H(n)$为抛n次硬币A面朝上的次数。
 
