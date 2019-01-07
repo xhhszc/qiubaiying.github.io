@@ -124,7 +124,7 @@ Configuration finished
 ```
 
 ##  5.编译
-编译之前，需安装：numpy，enum
+**编译之前，需安装：numpy，enum，keras，mock**
 根据是否使用GPU选择以下命令执行：
 ```bash
 bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package # CUP-only 
@@ -142,6 +142,23 @@ ERROR: /home/shiki/tensorflow/tensorflow/tools/pip_package/BUILD:235:1 1 input f
 ```
 根据网友的智慧：https://github.com/tensorflow/tensorflow/issues/24722
 删掉了（注释掉也行）tensorflow/tools/pip_package/BUILD文件中的第L172行代码（"@pasta//:LICENSE"），完美解决
+
+然后又遇到了一个坑：
+```bash
+    from tensorflow.python.ops import variables
+  File "/home/hthong/.cache/bazel/_bazel_hthong/36e03d3843aed90a32db1b13ecd82b39/execroot/org_tensorflow/bazel-out/host/bin/tensorflow/python/keras/api/create_tensorflow.python_api_2_keras_python_api_gen_compat_v2.runfiles/org_tensorflow/tensorflow/python/ops/variables.py", line 118, in <module>
+    "* `ONLY_FIRST_TOWER`: Deprecated alias for `ONLY_FIRST_REPLICA`.\n  ")
+AttributeError: attribute '__doc__' of 'type' objects is not writable
+Target //tensorflow/tools/pip_package:build_pip_package failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 3.041s, Critical Path: 0.72s
+INFO: 0 processes.
+FAILED: Build did NOT complete successfully
+```
+还是网友智慧：https://github.com/tensorflow/tensorflow/issues/12491
+
+卸载enum，安装enum34
+
 
 ##  6.生成whl
 过了很久之后，第五步完成，生成了一个uild_pip_package脚本。然后我们就可以根据这个脚本生成whl文件了
