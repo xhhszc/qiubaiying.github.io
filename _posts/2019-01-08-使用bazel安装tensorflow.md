@@ -161,11 +161,56 @@ FAILED: Build did NOT complete successfully
 
 
 ##  6.生成whl
-过了很久之后，第五步完成，生成了一个uild_pip_package脚本。然后我们就可以根据这个脚本生成whl文件了
+过了很久之后，第五步完成，生成了一个uild_pip_package脚本。
+
+成功示例：
+```bash
+Target //tensorflow/tools/pip_package:build_pip_package up-to-date:
+  bazel-bin/tensorflow/tools/pip_package/build_pip_package
+INFO: Elapsed time: 270.072s, Critical Path: 269.03s
+INFO: 60 processes: 60 local.
+INFO: Build completed successfully, 61 total actions
+(python2bazel) hthong@node150:~/software/tensorflow-master$
+```
+
+然后我们就可以根据这个脚本生成whl文件了
 
 The bazel build command builds a script named build_pip_package. Running this script as follows will build a .whl file within the /home/hthong/software/tensorflow_pkg directory
 ```bash
 bazel-bin/tensorflow/tools/pip_package/build_pip_package /home/hthong/software/tensorflow_pkg
+```
+
+显示如下：
+```bash
+(python2bazel) hthong@node150:~/software/tensorflow-master$ bazel-bin/tensorflow/tools/pip_package/build_pip_package /home/hthong/software/tensorflow_pkg
+Mon Jan 7 17:52:44 UTC 2019 : === Preparing sources in dir: /tmp/tmp.GFfdUdpEig
+~/software/tensorflow-master ~/software/tensorflow-master
+~/software/tensorflow-master
+Mon Jan 7 17:53:00 UTC 2019 : === Building wheel
+warning: no files found matching '*.pyd' under directory '*'
+warning: no files found matching '*.pd' under directory '*'
+warning: no files found matching '*.dll' under directory '*'
+warning: no files found matching '*.lib' under directory '*'
+warning: no files found matching '*.h' under directory 'tensorflow/include/tensorflow'
+warning: no files found matching '*' under directory 'tensorflow/include/Eigen'
+warning: no files found matching '*.h' under directory 'tensorflow/include/google'
+warning: no files found matching '*' under directory 'tensorflow/include/third_party'
+warning: no files found matching '*' under directory 'tensorflow/include/unsupported'
+Mon Jan 7 17:53:32 UTC 2019 : === Output wheel file is in: /home/hthong/software/tensorflow_pkg
+(python2bazel) hthong@node150:~/software/tensorflow-master$ ls
+ACKNOWLEDGMENTS     CONTRIBUTING.md    SECURITY.md         bazel-tensorflow-master  third_party
+ADOPTERS.md         ISSUES.md          WORKSPACE           bazel-testlogs           tools
+AUTHORS             ISSUE_TEMPLATE.md  arm_compiler.BUILD  configure
+BUILD               LICENSE            bazel-bin           configure.py
+CODEOWNERS          README.md          bazel-genfiles      models.BUILD
+CODE_OF_CONDUCT.md  RELEASE.md         bazel-out           tensorflow
+(python2bazel) hthong@node150:~/software/tensorflow-master$ cd ..
+(python2bazel) hthong@node150:~/software$ ls
+Anaconda3-2018.12-Linux-x86_64.sh  srun.sh  tensorflow-master  tensorflow-master.zip  tensorflow_pkg
+(python2bazel) hthong@node150:~/software$ cd tensorflow_pkg
+(python2bazel) hthong@node150:~/software/tensorflow_pkg$ ls
+tensorflow-1.12.0-cp27-cp27mu-linux_x86_64.whl
+(python2bazel) hthong@node150:~/software/tensorflow_pkg$
 ```
 
 
