@@ -230,23 +230,3 @@ print(sess.run(hello))
 ```
 你可以看到,没有warning了！！！tensorflow速度是不是变快了！！
 
-<!-- Gitalk 评论 start  -->
-
-<!-- Link Gitalk 的支持文件  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
-<div id="gitalk-container"></div>     <script type="text/javascript">
-    var gitalk = new Gitalk({
-
-    // gitalk的主要参数
-		clientID: 4a21a6cae814e719f2ce,
-		clientSecret: 9304695432f55f6b14e6c519f100df8140ec90d2,
-		repo: xhhszc.github.io,
-		owner: xhhszc,
-		admin: xhhszc,
-		id: 'xhhszc.github.io/2019_01_08/v1'
-    
-    });
-    gitalk.render('gitalk-container');
-</script> 
-<!-- Gitalk end -->
