@@ -244,7 +244,7 @@ print(sess.run(hello))
 		repo: xhhszc.github.io,
 		owner: xhhszc,
 		admin: xhhszc,
-		id: 'https://xhhszc.github.io/2019/01/08/%E4%BD%BF%E7%94%A8bazel%E5%AE%89%E8%A3%85tensorflow/'
+		id: 'xhhszc.github.io/2019_01_08/v1'
     
     });
     gitalk.render('gitalk-container');
