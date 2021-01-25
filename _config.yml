@@ -102,4 +102,4 @@ service-worker: true
     #} 
 #]
 
-theme: jekyll-theme-merlot
+theme: jekyll-theme-cayman
